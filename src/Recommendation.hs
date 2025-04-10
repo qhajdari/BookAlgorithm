@@ -2,13 +2,14 @@ module Recommendation where
 
 import Book
 import User
-import Data.List (nub)
+import Data.List (nub, intersect)
 
 calculateSimilarity :: Book -> Book -> Double
 calculateSimilarity book1 book2
-  | genres book1 == genres book2 = 0.8
+  | not (null (genres book1 `intersect` genres book2)) = 0.8
   | author book1 == author book2 = 0.5
   | otherwise = 0.1
+
 
 generateSimilarityMatrix :: [Book] -> [(Book, Book, Double)]
 generateSimilarityMatrix books = 
