@@ -6,7 +6,7 @@ import Data.List (nub)
 
 calculateSimilarity :: Book -> Book -> Double
 calculateSimilarity book1 book2
-  | genre book1 == genre book2 = 0.8
+  | genres book1 == genres book2 = 0.8
   | author book1 == author book2 = 0.5
   | otherwise = 0.1
 
