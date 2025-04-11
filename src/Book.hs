@@ -16,3 +16,10 @@ countBooksByGenre (x:xs) genre =
     in if genre `elem` genres x
        then 1 + restCount
        else restCount
+
+
+applyDiscount :: Book -> Book
+applyDiscount book = book { rating = rating book * 0.9 }
+
+booksWithDiscount :: [Book] -> [Book]
+booksWithDiscount books = map applyDiscount books
