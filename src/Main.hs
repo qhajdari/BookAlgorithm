@@ -17,6 +17,7 @@ main = do
 
       discountedBooks = map applyDiscount books
 
+      fantasyBooksList = fantasyBooks books
 
       
       user = User { userId = 1, history = [book1] }
@@ -27,5 +28,6 @@ main = do
   putStrLn ("Recommendations based on user history:" ++ show recommendations)
   putStrLn ("Total number of Drama books: " ++ show totalDrama)
   putStrLn ("Books with discount: " ++ show discountedBooks)
+  putStrLn ("Fantasy books: " ++ show fantasyBooksList)
 
 
