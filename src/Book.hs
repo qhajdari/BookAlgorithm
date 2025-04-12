@@ -17,12 +17,16 @@ countBooksByGenre (x:xs) genre =
        then 1 + restCount
        else restCount
 
---Perdorimi i map --
-applyDiscount :: Book -> Book
-applyDiscount book = book { rating = rating book * 0.9 }
+--Perdorimi i curried functions --
+applyDiscount :: Float -> Book -> Book
+applyDiscount discount book = book { rating = rating book * discount }
 
-booksWithDiscount :: [Book] -> [Book]
-booksWithDiscount books = map applyDiscount books
+
+--Perdorimi i map --
+-- applyDiscount :: Book -> Book
+-- applyDiscount book = book { rating = rating book * 0.9 }
+-- booksWithDiscount :: [Book] -> [Book]
+-- booksWithDiscount books = map applyDiscount books
 
 
 --Perdorimi i filter --
@@ -33,6 +37,8 @@ fantasyBooks  = filter (\book -> "Fantasy" `elem` genres book)
 --Perdorimi i foldr
 countHighRatedBooks :: [Book] -> Int
 countHighRatedBooks books = foldr (\book acc -> if rating book > 4.5 then acc + 1 else acc) 0 books
+
+
 
 
 

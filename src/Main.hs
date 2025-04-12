@@ -15,7 +15,10 @@ main = do
       
       totalDrama = countBooksByGenre books "Drama"
 
-      discountedBooks = map applyDiscount books
+      -- discountedBooks = map applyDiscount books
+
+      applyDiscount10 = applyDiscount 0.9
+      booksWithDiscount = map applyDiscount10 books
 
       fantasyBooksList = fantasyBooks books
 
@@ -26,11 +29,11 @@ main = do
       similarityMatrix = generateSimilarityMatrix books
       recommendations = recommendBooks user similarityMatrix
   
-  putStrLn ("Book titles: " ++ show titles)
-  putStrLn ("Recommendations based on user history:" ++ show recommendations)
-  putStrLn ("Total number of Drama books: " ++ show totalDrama)
-  putStrLn ("Books with discount: " ++ show discountedBooks)
-  putStrLn ("Fantasy books: " ++ show fantasyBooksList)
-  putStrLn ("Count books with rating > 4.5: " ++ show highRatedCount)
+  putStrLn ("1. Book titles: " ++ show titles)
+  putStrLn ("2. Recommendations based on user history:" ++ show recommendations)
+  putStrLn ("3. Total number of Drama books: " ++ show totalDrama)
+  putStrLn ("4. Books with discount: " ++ show booksWithDiscount)
+  putStrLn ("5. Fantasy books: " ++ show fantasyBooksList)
+  putStrLn ("6. Count books with rating > 4.5: " ++ show highRatedCount)
 
 
