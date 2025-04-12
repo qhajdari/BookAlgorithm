@@ -30,4 +30,10 @@ fantasyBooks :: [Book] -> [Book]
 fantasyBooks  = filter (\book -> "Fantasy" `elem` genres book) 
 
 
+--Perdorimi i foldr
+countHighRatedBooks :: [Book] -> Int
+countHighRatedBooks books = foldr (\book acc -> if rating book > 4.5 then acc + 1 else acc) 0 books
+
+
+
 
