@@ -39,7 +39,7 @@ BookAlgorithm/
 │── src/
 │   ├── Main.hs        # Main function
 │   ├── Book.hs        # Book module
-│   ├── Recommandation.hs        # Recommandation module
+│   ├── Recommandation.hs        # Recommandation module    
 │── test/
 │   ├── Test.hs        # Project tests
 │── BookAlgorithm.cabal # Cabal configuration
