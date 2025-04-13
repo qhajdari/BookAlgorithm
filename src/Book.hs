@@ -17,16 +17,17 @@ countBooksByGenre (x:xs) genre =
        then 1 + restCount
        else restCount
 
---Perdorimi i curried functions --
-applyDiscount :: Float -> Book -> Book
-applyDiscount discount book = book { rating = rating book * discount }
-
+--Perdorimi i list comprehensions --
 
 --Perdorimi i map --
 -- applyDiscount :: Book -> Book
 -- applyDiscount book = book { rating = rating book * 0.9 }
 -- booksWithDiscount :: [Book] -> [Book]
 -- booksWithDiscount books = map applyDiscount books
+
+--Perdorimi i curried functions dhe map --
+applyDiscount :: Float -> Book -> Book
+applyDiscount discount book = book { rating = rating book * discount }
 
 
 --Perdorimi i filter --
