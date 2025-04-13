@@ -24,6 +24,8 @@ main = do
 
       highRatedCount = countHighRatedBooks books
 
+      adventureCount = countAdventureBooks books
+
       
       user = User { userId = 1, history = [book1] }
       similarityMatrix = generateSimilarityMatrix books
@@ -35,5 +37,6 @@ main = do
   putStrLn ("4. Books with discount: " ++ show booksWithDiscount)
   putStrLn ("5. Fantasy books: " ++ show fantasyBooksList)
   putStrLn ("6. Count books with rating > 4.5: " ++ show highRatedCount)
+  putStrLn ("7. Total adveture books: " ++ show adventureCount)
 
 

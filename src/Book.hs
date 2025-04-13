@@ -8,7 +8,21 @@ data Book = Book
   , rating :: Float
   } deriving (Show, Eq)
 
---Perodimi i rekursionit --
+
+ --Polimorphic function --
+countBy :: (a -> Bool) -> [a] -> Int
+countBy _ [] = 0
+countBy predicate (x:xs) =
+    let restCount = length (filter predicate xs)
+    in if predicate x
+       then 1 + restCount
+       else restCount
+
+countAdventureBooks :: [Book] -> Int
+countAdventureBooks  = countBy (\book -> "Adventure" `elem` genres book) 
+
+
+--Perdoimi i rekursionit --
 countBooksByGenre :: [Book] -> String -> Int
 countBooksByGenre [] _ = 0
 countBooksByGenre (x:xs) genre =
@@ -17,7 +31,7 @@ countBooksByGenre (x:xs) genre =
        then 1 + restCount
        else restCount
 
---Perdorimi i list comprehensions --
+
 
 --Perdorimi i map --
 -- applyDiscount :: Book -> Book
@@ -38,6 +52,7 @@ fantasyBooks  = filter (\book -> "Fantasy" `elem` genres book)
 --Perdorimi i foldr
 countHighRatedBooks :: [Book] -> Int
 countHighRatedBooks books = foldr (\book acc -> if rating book > 4.5 then acc + 1 else acc) 0 books
+
 
 
 
