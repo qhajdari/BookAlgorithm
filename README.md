@@ -39,15 +39,12 @@ BookAlgorithm/
 │── src/
 │   ├── Main.hs        # Main function
 │   ├── Book.hs        # Book module
+│   ├── Recommandation.hs        # Recommandation module
 │── test/
 │   ├── Test.hs        # Project tests
 │── BookAlgorithm.cabal # Cabal configuration
 │── README.md          # This README file
 ```
-
-## Usage
-In **GHCi**, you can test the main functions:
-```haskell
 :load src/Main.hs
 main
 ```
@@ -65,7 +62,7 @@ If you want to contribute, follow these steps:
 3. Add improvements and make a **commit**.
 4. Submit a **pull request**.
 
-## License
+## 📜 License
 This project is licensed under the **MIT License**.
 
 ---

@@ -9,14 +9,13 @@ data Book = Book
   } deriving (Show, Eq)
 
 
- --Polimorphic function --
+ --Polimorphic function and recurisve --
 countBy :: (a -> Bool) -> [a] -> Int
 countBy _ [] = 0
 countBy predicate (x:xs) =
-    let restCount = length (filter predicate xs)
-    in if predicate x
-       then 1 + restCount
-       else restCount
+    if predicate x
+       then 1 + countBy predicate xs
+       else countBy predicate xs
 
 countAdventureBooks :: [Book] -> Int
 countAdventureBooks  = countBy (\book -> "Adventure" `elem` genres book) 
