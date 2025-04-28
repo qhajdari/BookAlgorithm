@@ -2,7 +2,7 @@
 
 
 ## Description
-**BookAlgorithm** BookAlgorithm is a book recommendation system developed in **Haskell**. This project uses simple models to suggest books based on user ratings and preferences. 
+**BookAlgorithm** is a book recommendation system developed in **Haskell**. This project uses simple models to suggest books based on user ratings and preferences. 
 It applies fundamental concepts of functional programming to manage books, recommend titles based on genres and ratings, and perform various book-related queries.
 
 This project showcases the use of:
@@ -79,7 +79,7 @@ BookAlgorithm/
 │   ├── Main.hs        # Main function
 │   ├── Book.hs        # Book module
 │   ├── Recommandation.hs        # Recommandation module    
-│── test/
+│   ├── User.hs        # User module    
 │   ├── Test.hs        # Project tests
 │── BookAlgorithm.cabal # Cabal configuration
 │── README.md          # This README file
@@ -101,7 +101,7 @@ If you want to contribute, follow these steps:
 3. Add improvements and make a **commit**.
 4. Submit a **pull request**.
 
-## 📜 License
+## License
 This project is licensed under the **MIT License**.
 
 ---
