@@ -94,12 +94,6 @@ main
 - Cabal for package management
 - HUnit for testing
 
-## Contribution
-If you want to contribute, follow these steps:
-1. **Fork** the project.
-2. Create a new **branch**.
-3. Add improvements and make a **commit**.
-4. Submit a **pull request**.
 
 ## License
 This project is licensed under the **MIT License**.
