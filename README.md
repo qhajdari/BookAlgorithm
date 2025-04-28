@@ -1,13 +1,52 @@
 # BookAlgorithm/Book Recommandation System
 
+
 ## Description
-BookAlgorithm is a book recommendation system developed in Haskell. This project uses simple models to suggest books based on user ratings and preferences.
+**BookAlgorithm** BookAlgorithm is a book recommendation system developed in **Haskell**. This project uses simple models to suggest books based on user ratings and preferences. 
+It applies fundamental concepts of functional programming to manage books, recommend titles based on genres and ratings, and perform various book-related queries.
+
+This project showcases the use of:
+- Algebraic data types
+- Pattern matching
+- High-order functions (map, filter, foldr)
+- Recursion
+- Parametric polymorphism
+- Curried functions
+- Automated testing with HUnit
+
+---
 
 ## Features
 - Registration and management of books.
-- Book recommendations based on ratings.
-- Clean functional structure in Haskell.
-- Integrated testing with HUnit.
+- Book recommendations based on user reading history and book similarity.
+- Filtering and transforming book collections.
+- Counting books by genre, by high ratings, or by custom conditions.
+- Applying discounts to book ratings (using curried functions).
+- Integrated unit tests with HUnit.
+
+---
+
+## 🔧 Key Functions Implemented
+
+| Function | Purpose |
+|:---------|:--------|
+| `countBy` | A polymorphic and recursive function that counts elements matching a given predicate. |
+| `countBooksByGenre` | Recursively counts how many books belong to a given genre. |
+| `applyDiscount` | A curried function that applies a discount factor to a book's rating. |
+| `fantasyBooks` | Filters books to only those in the "Fantasy" genre using `filter`. |
+| `countHighRatedBooks` | Counts books with rating > 4.5 using `foldr`. |
+| `generateSimilarityMatrix` | Builds a similarity matrix between books based on shared genres/authors. |
+| `recommendBooks` | Recommends books based on user history and similarity scores. |
+
+---
+
+## 🛠 Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/qhajdari/BookAlgorithm.git
+cd BookAlgorithm
+
 
 ## Installation
 Make sure you have **GHC**, **Cabal**, and the necessary dependencies installed to run the project.
