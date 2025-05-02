@@ -60,6 +60,13 @@ findBookById xid (x:xs)
   | otherwise = findBookById xid xs
 
 
+--Perdorimi i Either --
+validateRating :: Book -> Either String Book
+validateRating book
+  | rating book < 0  = Left "Rating cannot be negative."
+  | rating book > 5  = Left "Rating cannot be greater than 5."
+  | otherwise = Right book
+
 
 
 

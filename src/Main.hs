@@ -45,4 +45,19 @@ main = do
     Nothing -> putStrLn "8. Book with given ID not found"
 
 
+  -- Test for Either
+  putStrLn "\nValidating rating for book1:"
+  case validateRating book1 of
+    Right validBook  -> putStrLn $ "Rating is valid: " ++ show (rating validBook)
+    Left err -> putStrLn $ "Error: " ++ err
+
+  -- Test invalid case
+  let bookInvalid = Book 4 "Book D" "Author Z" ["Horror"] 7.0
+  putStrLn "\nValidating rating for bookInvalid:"
+  case validateRating bookInvalid of
+    Right validBook  -> putStrLn $ "Rating is valid: " ++ show (rating validBook)
+    Left err -> putStrLn $ "Error: " ++ err
+
+
+
 
