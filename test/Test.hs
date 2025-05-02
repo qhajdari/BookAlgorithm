@@ -2,6 +2,8 @@ module Main where
 
 import Test.HUnit
 import Book
+import User
+import Recommendation
 
 
 book1 :: Book

@@ -10,6 +10,16 @@
   (major1) == 0 && (major2) <  1 || \
   (major1) == 0 && (major2) == 1 && (minor) <= 0)
 #endif /* MIN_VERSION_BookAlgorithm */
+/* package BookAlgorithm-0.1.0.0 */
+#ifndef VERSION_BookAlgorithm
+#define VERSION_BookAlgorithm "0.1.0.0"
+#endif /* VERSION_BookAlgorithm */
+#ifndef MIN_VERSION_BookAlgorithm
+#define MIN_VERSION_BookAlgorithm(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  1 || \
+  (major1) == 0 && (major2) == 1 && (minor) <= 0)
+#endif /* MIN_VERSION_BookAlgorithm */
 /* package HUnit-1.6.2.0 */
 #ifndef VERSION_HUnit
 #define VERSION_HUnit "1.6.2.0"
