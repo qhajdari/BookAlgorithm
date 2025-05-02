@@ -34,12 +34,30 @@ testCountAdventure = TestCase (assertEqual "Should be 1 Adventure books" 1 (coun
 testCountFantasy :: Test
 testCountFantasy = TestCase (assertEqual "Should be 2 Fantasy books" 2 (countBooksByGenre exampleBooks "Fantasy"))
 
+-- Test 5: Test for Maybe - Book exists
+testFindBookSuccess :: Test
+testFindBookSuccess = TestCase $
+  assertEqual "Book with ID 1 should be found"
+    (Just book1)
+    (findBookById 1 exampleBooks)
+
+-- Test 6: Test for Maybe - Book does not exist
+testFindBookFail :: Test
+testFindBookFail = TestCase $
+  assertEqual "Book with ID 99 should not be found"
+    Nothing
+    (findBookById 99 exampleBooks)
+
+
+
 tests :: Test
 tests = TestList
   [ TestLabel "Test Book Title" testBookTitle
   , TestLabel "Test Book Count" testBookCount
   , TestLabel "Test Count Adventure Books" testCountAdventure
   , TestLabel "Test Count Fantasy Books" testCountFantasy
+  , TestLabel "Test Find Book Exists" testFindBookSuccess
+  , TestLabel "Test Find Book Missing" testFindBookFail
   ]
 
 main :: IO ()
