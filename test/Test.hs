@@ -48,6 +48,26 @@ testFindBookFail = TestCase $
     Nothing
     (findBookById 99 exampleBooks)
 
+-- Test 7: Test for Either - Valid rating
+testValidRating :: Test
+testValidRating = TestCase $
+  let book = Book 1 "Book A" "Author X" ["Fantasy"] 4.7
+  in assertEqual "Should return Right for valid rating"
+     (Right book) (validateRating book)
+
+testInvalidRatingHigh :: Test
+testInvalidRatingHigh = TestCase $
+  let book = Book 2 "Book B" "Author Y" ["Horror"] 7.0
+  in assertEqual "Should return Left for rating > 5"
+     (Left "Rating cannot be greater than 5.") (validateRating book)
+
+testInvalidRatingLow :: Test
+testInvalidRatingLow = TestCase $
+  let book = Book 3 "Book C" "Author Z" ["Mystery"] (-1.0)
+  in assertEqual "Should return Left for rating < 0"
+     (Left "Rating cannot be negative.") (validateRating book)
+
+
 
 
 tests :: Test
@@ -58,6 +78,9 @@ tests = TestList
   , TestLabel "Test Count Fantasy Books" testCountFantasy
   , TestLabel "Test Find Book Exists" testFindBookSuccess
   , TestLabel "Test Find Book Missing" testFindBookFail
+  , TestLabel "Test Valid Rating" testValidRating
+  , TestLabel "Test Invalid Rating High" testInvalidRatingHigh
+  , TestLabel "Test Invalid Rating Low" testInvalidRatingLow
   ]
 
 main :: IO ()
