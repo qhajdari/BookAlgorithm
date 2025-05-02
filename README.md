@@ -80,6 +80,7 @@ BookAlgorithm/
 │   ├── Book.hs        # Book module
 │   ├── Recommandation.hs        # Recommandation module    
 │   ├── User.hs        # User module    
+│── test/
 │   ├── Test.hs        # Project tests
 │── BookAlgorithm.cabal # Cabal configuration
 │── README.md          # This README file
