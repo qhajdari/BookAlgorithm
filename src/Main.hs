@@ -39,4 +39,10 @@ main = do
   putStrLn ("6. Count books with rating > 4.5: " ++ show highRatedCount)
   putStrLn ("7. Total adveture books: " ++ show adventureCount)
 
+  --Test for Maybe--
+  case findBookById 1 books of
+    Just book -> putStrLn ("8. Found book: " ++ show book)
+    Nothing -> putStrLn "8. Book with given ID not found"
+
+
 

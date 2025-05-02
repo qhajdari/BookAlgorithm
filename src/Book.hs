@@ -52,6 +52,17 @@ fantasyBooks  = filter (\book -> "Fantasy" `elem` genres book)
 countHighRatedBooks :: [Book] -> Int
 countHighRatedBooks = foldr (\book acc -> if rating book > 4.5 then acc + 1 else acc) 0 
 
+--Perdorimi i maybe --
+findBookById :: Int -> [Book] -> Maybe Book
+findBookById _ [] = Nothing
+findBookById xid (x:xs)
+  | bookId x == xid = Just x
+  | otherwise = findBookById xid xs
+
+
+
+
+
 
 
 
