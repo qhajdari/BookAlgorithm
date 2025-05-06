@@ -1,4 +1,5 @@
 module Book where
+import Text.ParserCombinators.ReadP (count)
 
 data Book = Book
   { bookId :: Int
@@ -6,7 +7,7 @@ data Book = Book
   , author :: String
   , genres :: [String]
   , rating :: Float
-  } deriving (Show, Eq)
+  } deriving (Show, Eq) -- Eq for comparing books, Show for printing
 
 
  --Polimorphic function and recurisve --
@@ -51,6 +52,7 @@ fantasyBooks  = filter (\book -> "Fantasy" `elem` genres book)
 --Perdorimi i foldr
 countHighRatedBooks :: [Book] -> Int
 countHighRatedBooks = foldr (\book acc -> if rating book > 4.5 then acc + 1 else acc) 0 
+
 
 --Perdorimi i maybe --
 findBookById :: Int -> [Book] -> Maybe Book

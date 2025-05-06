@@ -27,7 +27,7 @@ main = do
       adventureCount = countAdventureBooks books
 
       
-      user = User { userId = 1, history = [book1] }
+      user = User { userId = 1, name="UserName", history = [book1] }
       similarityMatrix = generateSimilarityMatrix books
       recommendations = recommendBooks user similarityMatrix
   

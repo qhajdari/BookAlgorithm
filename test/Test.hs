@@ -18,6 +18,9 @@ book3 = Book { bookId = 3, title = "Book C", author = "Author X", genres = ["Fan
 exampleBooks :: [Book]
 exampleBooks = [book1, book2, book3]
 
+testUser :: User
+testUser = User { userId = 1, name = "Test User", history = [book1] }
+
 -- Test 1: Test function BookTitle --
 testBookTitle :: Test
 testBookTitle = TestCase (assertEqual "Title should be 'Book A'" "Book A" (title (head exampleBooks)))
@@ -67,6 +70,13 @@ testInvalidRatingLow = TestCase $
   in assertEqual "Should return Left for rating < 0"
      (Left "Rating cannot be negative.") (validateRating book)
 
+testRecommendation :: Test
+testRecommendation = TestCase $
+  let matrix = generateSimilarityMatrix exampleBooks
+      recommendations = recommendBooks testUser matrix
+  in assertEqual "Should recommend Book C"
+     [book3] recommendations
+
 
 
 
@@ -81,6 +91,7 @@ tests = TestList
   , TestLabel "Test Valid Rating" testValidRating
   , TestLabel "Test Invalid Rating High" testInvalidRatingHigh
   , TestLabel "Test Invalid Rating Low" testInvalidRatingLow
+  , TestLabel "Test Recommendation" testRecommendation
   ]
 
 main :: IO ()
